@@ -1,9 +1,9 @@
 import React from 'react';
-import movieDetailData from '../data/movieDetailData.json';
+import movieDetailData from '../data/movieDetailData.json'; 
 import '../styles/MovieDetail.css';
 
 const MovieDetail = () => {
-  const ovie = movmieDetailData; // moviedetaildata.json 사용
+  const movie = movieDetailData;
 
   return (
     <div className="movie-detail-container">
@@ -22,19 +22,21 @@ const MovieDetail = () => {
           </tr>
           <tr>
             <td className="rating-cell">평점</td>
-            <td>{movie.vote_average} ({movie.vote_count}명 투표)</td>
+            <td>
+              {movie.vote_average} ({movie.vote_count}명 투표)
+            </td>
           </tr>
           <tr>
             <td className="genre-cell">장르</td>
             <td>
               {movie.genres && movie.genres.length > 0
                 ? movie.genres.map((genre) => genre.name).join(', ')
-                : '장르 정보 없음'}
+                : ''}
             </td>
           </tr>
           <tr>
             <td className="overview-cell">줄거리</td>
-            <td>{movie.overview || '줄거리 정보 없음'}</td>
+            <td>{movie.overview || ''}</td>
           </tr>
         </tbody>
       </table>
@@ -43,4 +45,3 @@ const MovieDetail = () => {
 };
 
 export default MovieDetail;
-
