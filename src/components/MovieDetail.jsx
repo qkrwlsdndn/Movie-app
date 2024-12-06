@@ -1,20 +1,9 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import movieListData from "../data/movieListData.json";
-import movieDetailData from "../data/movieDetailData.json";
-import "../styles/MovieDetail.css";
+import React from 'react';
+import movieDetailData from '../data/movieDetailData.json';
+import '../styles/MovieDetail.css';
 
 const MovieDetail = () => {
-  const { id } = useParams();
-
-  const movie =
-    movieDetailData.id.toString() === id
-      ? movieDetailData 
-      : movieListData.results.find((m) => m.id.toString() === id);
-
-  if (!movie) {
-    return <p>영화를 찾을 수 없습니다.</p>;
-  }
+  const ovie = movmieDetailData; // moviedetaildata.json 사용
 
   return (
     <div className="movie-detail-container">
@@ -38,14 +27,14 @@ const MovieDetail = () => {
           <tr>
             <td className="genre-cell">장르</td>
             <td>
-              {movie.genres?.length
-                ? movie.genres.map((genre) => genre.name).join(", ")
-                : ""}
+              {movie.genres && movie.genres.length > 0
+                ? movie.genres.map((genre) => genre.name).join(', ')
+                : '장르 정보 없음'}
             </td>
           </tr>
           <tr>
             <td className="overview-cell">줄거리</td>
-            <td>{movie.overview || "줄거리 없음"}</td>
+            <td>{movie.overview || '줄거리 정보 없음'}</td>
           </tr>
         </tbody>
       </table>
@@ -54,3 +43,4 @@ const MovieDetail = () => {
 };
 
 export default MovieDetail;
+
