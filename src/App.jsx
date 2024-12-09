@@ -29,7 +29,7 @@ const App = () => {
       const filteredMovies = data.results.filter((movie) => !movie.adult);
       setMovies(filteredMovies);
     } catch (error) {
-      console.error("Error fetching movies:", error);
+      console.error("에러뜸", error);
     }
   };
 
