@@ -3,48 +3,41 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
   background-color: #f0f0f0;
 }
 
-.movie-detail-table {
-  border-collapse: collapse;
-  width: 95%;
-  max-width: 1200px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  color: #000000; 
-}
-
-.movie-detail-table td {
-  padding: 20px;
-  border: 1px solid #ddd;
-  vertical-align: middle;
-  color: #000000; 
-}
-
-.poster-cell {
-  width: 40%;
-  text-align: center;
+.movie-detail {
+  display: flex;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .movie-poster {
-  max-width: 100%;
-  max-height: 400px;
-  border-radius: 8px;
+  max-width: 40%;
+  height: auto;
   object-fit: cover;
 }
 
-.title-cell, .rating-cell {
-  font-size: 22px;
-  font-weight: bold;
-  color: #000000; 
+.movie-info {
+  padding: 20px;
+  flex: 1;
 }
 
-.genre-cell, .overview-cell {
-  font-size: 18px;
-  text-align: center;
-  color: #000000; 
+.movie-info h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.movie-info p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.movie-info strong {
+  color: #333;
 }
